@@ -11,7 +11,7 @@ fi
 
 local current_dir='%{$terminfo[bold]$fg[blue]%}%~ %{$reset_color%}'
 local git_branch='$(git_prompt_info)'
-local time_info='%{$fg[green]%}[%D{"%H:%M"}]%f'
+local time_info='%{$fg[green]%}[%D{%H:%M}]%f'
 
 ZSH_THEME_RVM_PROMPT_OPTIONS="i v g"
 
