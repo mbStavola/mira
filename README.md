@@ -2,7 +2,7 @@
 
 A modified [bira][1] with time info and a simplified start prompt.
 
-![Mira Example Screenshot](/SCREENSHOT.png)
+![Mira Example Screenshot](images/SCREENSHOT.png)
 
 # Installation
 
