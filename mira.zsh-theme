@@ -16,12 +16,16 @@ else
 fi
 
 local current_dir='%{$terminfo[bold]$fg[blue]%}%~ %{$reset_color%}'
-local git_branch='$(git_prompt_info)'
+
+# hg_prompt_info requires this plugin:
+# https://github.com/iarkhanhelsky/oh-my-zsh-hg-prompt
+local vcs_branch='$(git_prompt_info)$(hg_prompt_info)'
+
 local time_info='%{$fg[green]%}[%D{%H:%M}]%f'
 
 ZSH_THEME_RVM_PROMPT_OPTIONS="i v g"
 
-PROMPT="${ssh_indicator} ${user_host}${current_dir}${git_branch}
+PROMPT="${ssh_indicator} ${user_host}${current_dir}${vcs_branch}
 %B${time_info}%b %B${user_symbol}%b "
 RPROMPT="%B${return_code}%b"
 
