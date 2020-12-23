@@ -9,13 +9,19 @@ else
     local user_symbol='$'
 fi
 
+if [ -z $SSH_CONNECTION ]; then
+    local ssh_indicator="$fg[green][LOCAL]$reset_color"
+else
+    local ssh_indicator="$fg[red][  SSH]$reset_color"
+fi
+
 local current_dir='%{$terminfo[bold]$fg[blue]%}%~ %{$reset_color%}'
 local git_branch='$(git_prompt_info)'
 local time_info='%{$fg[green]%}[%D{%H:%M}]%f'
 
 ZSH_THEME_RVM_PROMPT_OPTIONS="i v g"
 
-PROMPT="${user_host}${current_dir}${git_branch}
+PROMPT="${ssh_indicator} ${user_host}${current_dir}${git_branch}
 %B${time_info}%b %B${user_symbol}%b "
 RPROMPT="%B${return_code}%b"
 
