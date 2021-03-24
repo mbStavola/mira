@@ -10,9 +10,9 @@ else
 fi
 
 if [ -z $SSH_CONNECTION ]; then
-    local ssh_indicator="$fg[green][LOCAL]$reset_color"
+    local ssh_indicator="$terminfo[bold]$fg[green][LOCAL]$reset_color"
 else
-    local ssh_indicator="$fg[red][  SSH]$reset_color"
+    local ssh_indicator="$terminfo[bold]$fg[red][  SSH]$reset_color"
 fi
 
 local current_dir='%{$terminfo[bold]$fg[blue]%}%~ %{$reset_color%}'
