@@ -22,10 +22,10 @@ Once that is done, you can simply set the various prompt env vars with the assoc
 
 ```nu
 use mira.nu
-$env.PROMPT_COMMAND =  (mira prompt-command)
-$env.PROMPT_COMMAND_RIGHT = (mira prompt-command-right)
-$env.PROMPT_INDICATOR = (mira prompt-indicator)
-$env.PROMPT_MULTILINE_INDICATOR = (mira multiline-indicator)
+$env.PROMPT_COMMAND = { mira prompt-command }
+$env.PROMPT_COMMAND_RIGHT = { mira prompt-command-right }
+$env.PROMPT_INDICATOR = { mira prompt-indicator }
+$env.PROMPT_MULTILINE_INDICATOR = { mira multiline-indicator }
 ```
 
 Additionally, if you prefer, you can set `render_right_prompt_on_last_line` in `config.nu` to have the error code display on the same line as the prompt indicator.
