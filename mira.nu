@@ -16,7 +16,7 @@ export def prompt-command [] {
         $"(ansi $user_color)[LOCAL](ansi reset)"
     })
 
-    let user_host = $"(ansi $user_color)(whoami)@(uname -n)(ansi reset)"
+    let user_host = $"(ansi $user_color)(whoami)@(uname | get nodename)(ansi reset)"
 
     let user_directory_color = { fg: blue, attr: b }
     let directory = $"(ansi $user_directory_color)(pwd | str replace $env.HOME "~")(ansi reset)"
