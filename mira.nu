@@ -91,7 +91,7 @@ export def prompt-command [] {
         ""
     })
     
-    return $"($ssh_indicator) ($user_host) ($directory) ($vcs_line)\n\n"
+    return $"($ssh_indicator) ($user_host) ($directory) ($vcs_line)\n"
 }
 
 export def prompt-command-right [] {
